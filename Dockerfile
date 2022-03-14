@@ -16,7 +16,6 @@ RUN mkdir -p /var/log/supervisor && \
 RUN tac /opt/bitnami/scripts/pgpool/entrypoint.sh | sed '1 a /opt/bitnami/scripts/pgpool/setup.sh' | tac > /opt/bitnami/scripts/pgpool/entrypoint2.sh && \
     mv /opt/bitnami/scripts/pgpool/entrypoint2.sh /opt/bitnami/scripts/pgpool/entrypoint.sh && \
     chmod a+x /opt/bitnami/scripts/pgpool/entrypoint.sh
-RUN cat /opt/bitnami/scripts/pgpool/entrypoint.sh
 USER 1001
 
 ENTRYPOINT [ "/opt/bitnami/scripts/pgpool/entrypoint.sh" ]
